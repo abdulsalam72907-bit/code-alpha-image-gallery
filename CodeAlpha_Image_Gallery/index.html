@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Responsive CodeAlpha Image Gallery built with HTML, CSS and JavaScript.">
+  <title>CodeAlpha | Image Gallery</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="navbar container">
+      <a class="brand" href="#" aria-label="CodeAlpha Gallery home">
+        <span class="brand-mark">CA</span>
+        <span>CodeAlpha <small>Gallery</small></span>
+      </a>
+      <div class="nav-links">
+        <a href="#gallery">Gallery</a>
+        <a href="#about">About</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero container">
+      <div class="hero-copy">
+        <p class="eyebrow">Frontend Development Task 01</p>
+        <h1>Explore the <span>Visual Gallery.</span></h1>
+        <p class="hero-text">
+          A responsive image gallery created with HTML, CSS and JavaScript,
+          featuring category filters, smooth transitions, keyboard navigation and a full-screen lightbox.
+        </p>
+        <a class="hero-button" href="#gallery">Explore Gallery <span>↓</span></a>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="orb orb-one"></div>
+        <div class="orb orb-two"></div>
+        <div class="floating-card card-one">01 <span>Nature</span></div>
+        <div class="floating-card card-two">06 <span>Architecture</span></div>
+      </div>
+    </section>
+
+    <section class="gallery-section container" id="gallery">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Curated collection</p>
+          <h2>Image Gallery</h2>
+        </div>
+        <p id="resultCount" class="result-count">8 images</p>
+      </div>
+
+      <div class="filters" role="group" aria-label="Image categories">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="nature">Nature</button>
+        <button class="filter-btn" data-filter="city">City</button>
+        <button class="filter-btn" data-filter="travel">Travel</button>
+        <button class="filter-btn" data-filter="architecture">Architecture</button>
+      </div>
+
+      <div class="gallery-grid" id="galleryGrid">
+        <article class="gallery-item" data-category="nature">
+          <button class="image-card" data-index="0" aria-label="Open Forest Morning image">
+            <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1000&q=85" alt="Sunlight through a green forest">
+            <span class="image-overlay"><span>View image</span><span class="arrow">↗</span></span>
+            <span class="tag">Nature</span>
+          </button>
+          <div class="card-caption"><h3>Forest Morning</h3><p>Nature · 01</p></div>
+        </article>
+
+        <article class="gallery-item" data-category="travel">
+          <button class="image-card" data-index="1" aria-label="Open Mountain Escape image">
+            <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1000&q=85" alt="Mountain landscape under a blue sky">
+            <span class="image-overlay"><span>View image</span><span class="arrow">↗</span></span>
+            <span class="tag">Travel</span>
+          </button>
+          <div class="card-caption"><h3>Mountain Escape</h3><p>Travel · 02</p></div>
+        </article>
+
+        <article class="gallery-item featured" data-category="city">
+          <button class="image-card" data-index="2" aria-label="Open City Lights image">
+            <img src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&w=1200&q=85" alt="City skyline with buildings and lights">
+            <span class="image-overlay"><span>View image</span><span class="arrow">↗</span></span>
+            <span class="tag">City</span>
+          </button>
+          <div class="card-caption"><h3>City Lights</h3><p>City · 03</p></div>
+        </article>
+
+        <article class="gallery-item" data-category="nature">
+          <button class="image-card" data-index="3" aria-label="Open Ocean Breeze image">
+            <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1000&q=85" alt="Turquoise ocean and sandy beach">
+            <span class="image-overlay"><span>View image</span><span class="arrow">↗</span></span>
+            <span class="tag">Nature</span>
+          </button>
+          <div class="card-caption"><h3>Ocean Breeze</h3><p>Nature · 04</p></div>
+        </article>
+
+        <article class="gallery-item" data-category="architecture">
+          <button class="image-card" data-index="4" aria-label="Open Modern Lines image">
+            <img src="https://images.unsplash.com/photo-1487958449943-2429e8be8625?auto=format&fit=crop&w=1000&q=85" alt="Modern white architectural building">
+            <span class="image-overlay"><span>View image</span><span class="arrow">↗</span></span>
+            <span class="tag">Architecture</span>
+          </button>
+          <div class="card-caption"><h3>Modern Lines</h3><p>Architecture · 05</p></div>
+        </article>
+
+        <article class="gallery-item" data-category="city">
+          <button class="image-card" data-index="5" aria-label="Open Urban Motion image">
+            <img src="https://images.unsplash.com/photo-1519501025264-65ba15a82390?auto=format&fit=crop&w=1000&q=85" alt="Urban city streets and tall buildings">
+            <span class="image-overlay"><span>View image</span><span class="arrow">↗</span></span>
+            <span class="tag">City</span>
+          </button>
+          <div class="card-caption"><h3>Urban Motion</h3><p>City · 06</p></div>
+        </article>
+
+        <article class="gallery-item" data-category="travel">
+          <button class="image-card" data-index="6" aria-label="Open Desert Road image">
+            <img src="https://images.unsplash.com/photo-1473580044384-7ba9967e16a0?auto=format&fit=crop&w=1000&q=85" alt="Road crossing a desert landscape">
+            <span class="image-overlay"><span>View image</span><span class="arrow">↗</span></span>
+            <span class="tag">Travel</span>
+          </button>
+          <div class="card-caption"><h3>Desert Road</h3><p>Travel · 07</p></div>
+        </article>
+
+        <article class="gallery-item" data-category="architecture">
+          <button class="image-card" data-index="7" aria-label="Open Glass & Steel image">
+            <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1000&q=85" alt="Modern glass and steel office interior">
+            <span class="image-overlay"><span>View image</span><span class="arrow">↗</span></span>
+            <span class="tag">Architecture</span>
+          </button>
+          <div class="card-caption"><h3>Glass & Steel</h3><p>Architecture · 08</p></div>
+        </article>
+
+        <article class="gallery-item" data-category="nature">
+          <button class="image-card" data-index="8" aria-label="Open Waterfall Escape image">
+            <img src="https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?auto=format&fit=crop&w=1000&q=85" alt="Waterfall surrounded by green nature">
+            <span class="image-overlay"><span>View image</span><span class="arrow">↗</span></span>
+            <span class="tag">Nature</span>
+          </button>
+          <div class="card-caption"><h3>Waterfall Escape</h3><p>Nature · 09</p></div>
+        </article>
+
+        <article class="gallery-item" data-category="travel">
+          <button class="image-card" data-index="9" aria-label="Open Coastal Journey image">
+            <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1000&q=85" alt="Scenic coastal travel landscape">
+            <span class="image-overlay"><span>View image</span><span class="arrow">↗</span></span>
+            <span class="tag">Travel</span>
+          </button>
+          <div class="card-caption"><h3>Coastal Journey</h3><p>Travel · 10</p></div>
+        </article>
+
+        <article class="gallery-item" data-category="city">
+          <button class="image-card" data-index="10" aria-label="Open Downtown Avenue image">
+            <img src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?auto=format&fit=crop&w=1000&q=85" alt="Busy downtown avenue with buildings">
+            <span class="image-overlay"><span>View image</span><span class="arrow">↗</span></span>
+            <span class="tag">City</span>
+          </button>
+          <div class="card-caption"><h3>Downtown Avenue</h3><p>City · 11</p></div>
+        </article>
+
+        <article class="gallery-item" data-category="architecture">
+          <button class="image-card" data-index="11" aria-label="Open Concrete Geometry image">
+            <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1000&q=85" alt="Modern geometric office building">
+            <span class="image-overlay"><span>View image</span><span class="arrow">↗</span></span>
+            <span class="tag">Architecture</span>
+          </button>
+          <div class="card-caption"><h3>Concrete Geometry</h3><p>Architecture · 12</p></div>
+        </article>
+
+        <article class="gallery-item" data-category="nature">
+          <button class="image-card" data-index="12" aria-label="Open Green Valley image">
+            <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1000&q=85" alt="Green valley landscape under sunlight">
+            <span class="image-overlay"><span>View image</span><span class="arrow">↗</span></span>
+            <span class="tag">Nature</span>
+          </button>
+          <div class="card-caption"><h3>Green Valley</h3><p>Nature · 13</p></div>
+        </article>
+
+        <article class="gallery-item" data-category="travel">
+          <button class="image-card" data-index="13" aria-label="Open Alpine Adventure image">
+            <img src="https://images.unsplash.com/photo-1464278533981-50106e6176b1?auto=format&fit=crop&w=1000&q=85" alt="Mountain peaks and alpine landscape">
+            <span class="image-overlay"><span>View image</span><span class="arrow">↗</span></span>
+            <span class="tag">Travel</span>
+          </button>
+          <div class="card-caption"><h3>Alpine Adventure</h3><p>Travel · 14</p></div>
+        </article>
+
+        <article class="gallery-item" data-category="city">
+          <button class="image-card" data-index="14" aria-label="Open Night Skyline image">
+            <img src="https://images.unsplash.com/photo-1514565131-fce0801e5785?auto=format&fit=crop&w=1000&q=85" alt="Night city skyline with illuminated buildings">
+            <span class="image-overlay"><span>View image</span><span class="arrow">↗</span></span>
+            <span class="tag">City</span>
+          </button>
+          <div class="card-caption"><h3>Night Skyline</h3><p>City · 15</p></div>
+        </article>
+
+        <article class="gallery-item" data-category="architecture">
+          <button class="image-card" data-index="15" aria-label="Open Architectural Interior image">
+            <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1000&q=85" alt="Modern architectural interior">
+            <span class="image-overlay"><span>View image</span><span class="arrow">↗</span></span>
+            <span class="tag">Architecture</span>
+          </button>
+          <div class="card-caption"><h3>Architectural Interior</h3><p>Architecture · 16</p></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="about container" id="about">
+      <div>
+        <p class="eyebrow">Task requirements</p>
+        <h2>Built for every screen.</h2>
+      </div>
+      <p>
+        This project demonstrates a responsive HTML/CSS layout, JavaScript gallery navigation,
+        a lightbox view, hover effects, smooth transitions and category filtering.
+      </p>
+    </section>
+  </main>
+
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <div class="lightbox-backdrop" data-close="true"></div>
+    <div class="lightbox-content" role="dialog" aria-modal="true" aria-label="Image viewer">
+      <button class="lightbox-close" id="closeLightbox" aria-label="Close image viewer">×</button>
+      <button class="lightbox-nav prev" id="prevBtn" aria-label="Previous image">‹</button>
+      <figure>
+        <img id="lightboxImage" src="" alt="">
+        <figcaption>
+          <div>
+            <span id="lightboxCategory"></span>
+            <h3 id="lightboxTitle"></h3>
+          </div>
+          <span id="lightboxNumber"></span>
+        </figcaption>
+      </figure>
+      <button class="lightbox-nav next" id="nextBtn" aria-label="Next image">›</button>
+    </div>
+  </div>
+
+  <footer>
+    <p>CodeAlpha Frontend Development • Image Gallery Task</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
